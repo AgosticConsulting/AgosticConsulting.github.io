@@ -1,0 +1,16 @@
+.fullwidth_element {
+    height: calc(33vh - 20px); /* 33% of viewport height minus 20px for padding */
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullwidth_element button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}

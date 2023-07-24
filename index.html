@@ -14,14 +14,108 @@
 <div id="nav-placeholder"></div>
 
 <div>
-    <div id="background-img"></div>
+
     <div class="fullwidth_element">
         <button id="contact-button">Contact Me</button>
     </div>
+    <div class="fullwidth_text_element">
+        <h1>
+            Agostic Consulting
+        </h1>
+    </div>
+    <div id="flex1">
+        <!-- placeholder img -->
+        <div>
+            <img src="https://www.leadingpoint.io/wp-content/uploads/2022/04/LP_Logo_Full_Blue-01.png" alt="placeholder">
+        </div>
+        <img src="https://waltz.finos.org/site/img/waltz_badge_mono_600px.png" style="background-color: #2a3142; border-radius:10px" alt="placeholder">
+        <img src="https://via.placeholder.com/150" alt="placeholder">
+    </div>
 </div>
+
+
+
+
+<!--
+<div class="photobanner-container" style="">
+    <div class="photobanner">
+        <img class="first_banner_img" src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+        <img src="http://placehold.it/150x250">
+
+    </div>
+
+</div>
+-->
+
+
+
+
+<div id="main"></div>
 
 <script>
     $(function(){
       $("#nav-placeholder").load("./navbar.html");
     });
+</script>
+
+<script>
+    // get contents of content/testfile.txt
+    function getContents() {
+
+        var contents = [];
+        return new Promise((resolve, reject) =>{
+            $.get("./content/testfile.txt", function(data) {
+                // seperate the data into each line
+                var lines = data.split("\n");
+
+                // loop through each line
+                for (var i = 0;i < lines.length; i++){
+                    // remove indents and tabs and such
+
+                    contents.push(lines[i]
+                        .trim());
+                }
+                resolve(contents);
+
+            }).fail(function(err){
+                    reject(err);
+            });
+        });
+    };
+
+    getContents().then(contents => {
+        for (var i = 0; i < contents.length; i = i + 2) {
+            addContents(contents[i], contents[i + 1]);
+            console.log(contents[i] + " " + contents[i + 1])
+        }
+    });
+
+
+    function addContents(type, content){
+        var newContent = document.createElement(type);
+        newContent.innerHTML = content;
+        // add body tag to class
+        document.getElementById("main").appendChild(newContent);
+    }
+
+
+
+
+
+
+
+
 </script>

@@ -1,88 +1,65 @@
-.fullwidth_element {
-    border-radius: 20px;
-    height: calc(33vh - 20px); /* 33% of viewport height minus 20px for padding */
-    width: auto;
+
+h1 {
+    font-family: truenoSB;
+    /* make not bold */
+    font-weight: normal;
+}
+
+
+
+.flex1 {
     display: flex;
-    padding: 30px;
-    margin: 10px 30px;
-    background-color: #6161ee;
+}
+.flex1-child {
+    flex: 3;
+}
+
+.flex1 img {
+    width:calc(33vh - 10px);
+    flex: 1;
+}
+
+.gradient-border-bottom {
+    --borderWidth: 3px;
+    background: none; /* Remove the background */
+    position: relative;
+    border-radius: var(--borderWidth);
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.gradient-border-bottom:after {
+    content: '';
+    position: absolute;
+    bottom: calc(calc(-1 * var(--borderWidth)) + 5px); /* Place the element at the bottom */
+    left: calc(-1 * var(--borderWidth));
+    height: var(--borderWidth); /* Set the height to the desired border width */
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #7dd757, #61b658,#0c515b);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -5;
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+.services-flex{
     display: flex;
+
     justify-content: center;
-    align-items: center;
-
 }
 
-.fullwidth_element button {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-}
+.services-flex-child{
 
-.fullwidth_text_element{
-
-    border-radius: 20px;
-    height: calc(33vh - 20px); /* 33% of viewport height minus 20px for padding */
-    width: auto;
-    display: flex;
-    padding: 30px;
-    margin: 10px 30px;
-
-    background: linear-gradient(45deg, #6161ee, #a561ee, #cf5ee0);
-    background-size: 400% 400%;
-    animation: background-gradient 10s linear infinite;
-}
-.fullwidth_text_element h1{
-    font-size: 50px;
-    font-weight: bold;
-    color: black;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-family: Arial;
-
-}
-
-#flex1{
-    height: calc(33vh - 20px); /* 33% of viewport height minus 20px for padding */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-#flex1 img {
-    padding: 10px 10px;
-    margin: 0px 20px;
-    width: 400px;
-
-}
-#flex1 img:hover{
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-
-    transition: 1s;
-    -webkit-transition: 1s;
-
-
-    cursor: pointer;
-    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
 
 
+@font-face {
+    font-family: truenoSB;
+    src: url("../resources/fonts/trueno/truenosbd.otf") format("opentype");
+}
 
 
-
-
-
-
-
-
-
-@-webkit-keyframes "background-gradient" {
+@keyframes animatedgradient {
     0% {
         background-position: 0% 50%;
     }
@@ -93,6 +70,7 @@
         background-position: 0% 50%;
     }
 }
+
 
 
 

@@ -12,23 +12,39 @@
 </head>
 
 
-<div id="nav-placeholder"></div>
+<div id="navigation"></div>
 <div id="main" style="width:80%;margin:auto;">
 
     <div id="About" class="flex1 gradient-border-bottom">
         <div class="flex1-child">
             <h1>About Us</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <h1> Services</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+              We are currently leading a innovative project to implement a state-of-the-art wealth management system for Advisors on the AWS cloud platform. This ambitious undertaking involves migrating the existing system to the new platform seamlessly. We are leveraging AWS for enhanced scalability, superior customer experience, and the integration of cutting-edge ML/AI technologies. My strategic approach and expertise in cloud architecture are instrumental in ensuring the successful realization of these transformative initiatives, revolutionizing the way wealth management services are delivered and experienced.            </p>
+            <h1> Skills and Platforms</h1>
+
+                <!-- AWS Lambda
+· Snowflake ·
+PostgreSQL ·
+Amazon Web Services (AWS) ·
+Machine Learning ·
+Wealth Management Services ·
+Solution Architecture ·
+Google Cloud Platform (GCP)
+-->         <ul>
+            <li> AWS Lambda </li>
+            <li> Snowflake </li>
+            <li> PostgreSQL </li>
+            <li> Amazon Web Services (AWS) </li>
+            <li> Machine Learning </li>
+            <li> Wealth Management Services </li>
+            <li> Solution Architecture </li>
+            <li> Google Cloud Platform (GCP) </li>
+            </ul>
+
         </div>
         <img class="flex1-child" src="./resources/images/logo/ag_logo_clear.svg" >
     </div>
-    <div id="Services">
+    <div id="Services" class="row-layout">
         <h1 style="font-family:truenoSB; ">Our Services</h1>
         <div class="services-flex gradient-border-bottom">
             <div class="services-flex-child">
@@ -44,49 +60,45 @@
             </div>
         </div>
     </div>
-    <div id="Clients">
-    <h1 style="font-family:truenoSB; ">Our Clients</h1>
-        <div class="services-flex">
-                <div class="services-flex-child">
+    <div id="Clients" class="row-layout">
+        <h1 style="font-family:truenoSB; ">Our Clients</h1>
+        <div class="services-flex gradient-border-bottom">
+            <div class="services-flex-child">
+                <a href="https://www.lpl.com" target="_blank">
+                    <img class="client-logo" src="./resources/images/clientlogo/LPLLogo.png">
+                </a>
+                <p> LPL Financial</p>
+            </div>
 
-                    <img src="http://placehold.it/150x250">
-                    <p> Placeholder 1</p>
-                </div>
-                <div class="services-flex-child">
+            <div class="services-flex-child">
+                <a href="https://espusa.com" target="_blank">
+                    <img class="client-logo" src="./resources/images/clientlogo/ESPLogo.jpg">
+                </a>
+                    <p>Enterprise Solution Providers</p>
+            </div>
 
-                    <img src="http://placehold.it/150x250">
-                    <p> Placeholder 2</p>
-                </div>
-
-                <div class="services-flex-child">
-
-                    <img src="http://placehold.it/150x250">
-                    <p>Placeholder 2</p>
-                </div>
+            <div class="services-flex-child">
+                <a href="https://www.unqork.com" target="_blank">
+                    <img class="client-logo" src="./resources/images/clientlogo/UnqorkLogo.webp">
+                </a>
+                <p>Unqork</p>
+            </div>
 
         </div>
     </div>
 
 
 
-    <div id="Contact">
-
-
-
-
-
+    <div id="Contact" class="contact">
+        <div id="contact-button" class="contact-button">
+            <p>Contact Us</p>
+        </div>
     </div>
 
 
 
 
 </div>
-<div class="scroll-to-top">
-
-
-</div>
-
-
 
 <!--
 <div class="photobanner-container" style="">
@@ -111,29 +123,117 @@
 
 </div>
 -->
-
-
-
-<!-- copyright agostic consulting -->
+<!-- copyright Agostic consulting -->
 <div class="copyright">
     <p>Agostic Consulting © 2023</p>
 </div>
 
+
+
+
+<div id="hexagons">
+    <span class="hex"></span>
+</div>
+
 <script>
     $(function(){
-      $("#nav-placeholder").load("./navbar.html", function(){
-          setNavPadding();
-      });
+        $("#navigation").load("./navbar.html", function(){
+            setNavPadding();
+        });
     });
 
     //Dynamically set height to navbar: (not working due to async)
     //   var height = document.getElementsByClassName("navbar")[0];
 
-   function setNavPadding(){
-       var height = getComputedStyle(document.getElementsByClassName("navbar")[0]).height;
-       var main = document.getElementById("main");
-       main.style.paddingTop = height;
-   }
+    function setNavPadding(){
+        var height = getComputedStyle(document.getElementsByClassName("navbar")[0]).height;
+        var main = document.getElementById("main");
+        main.style.paddingTop = height;
+    }
+
+    // set up listener for click on contact button
+    function setupContactButton(){
+        // scroll to contact section
+        const contactButton = document.getElementById("contact-button");
+        contactButton.addEventListener("click", function(){
+            // enlarge the button to 100% width over 1 second
+            contactButton.style.width = "70%";
+            contactButton.style.backgroundColor = "white";
+            contactButton.style.border = "3px solid #7ed957";
+            contactButton.style.transition = "1s";
+            // transition to make background color white
+
+
+
+
+            // scroll so contact button is centered
+
+            // add contact information
+            contactButton.innerHTML = "" +
+                "<div>Contact Us</div>" +
+                "<div>Phone: +44 7775 653994</div>" +
+                "<div>Email: <a href = 'mailto:russell@agosticconsulting.com?subject=Buisness Inquiry'>russell@agosticconsulting.com</div>";
+
+        });
+        contactButton.addEventListener("transitionstart", event => {
+            // scroll to contact section
+            const contactSection = document.getElementById("Contact");
+            // wait 1s
+            setTimeout(function(){
+                contactSection.scrollIntoView({behavior: "smooth", block: "center"});
+            }, 500);
+
+        });
+    }
+
+    setupContactButton();
+
+
+
+    function updateHexagons() {
+        const hexagons = document.getElementsByClassName("hex");
+        const hexArray = Array.from(hexagons);
+        // get mouse X, Y
+        var mouseX = mousePos.x;
+        var mouseY = mousePos.y;
+
+        hexArray.forEach(function (value) {
+            updateHexagon(value, mouseX, mouseY);
+
+        });
+    };
+
+    function updateHexagon(currentValue, mouseX, mouseY){
+        var hexagon = currentValue;
+        console.log(hexagon);
+        if (hexagon.getAttribute("data-xSpeed") === 'undefined') {
+            hexagon.dataset.xSpeed = 0;
+        }
+        if (hexagon.getAttribute("data-ySpeed") === 'undefined') {
+            hexagon.dataset.ySpeed = 0;
+        }
+        //var xSpeed = hexagon.dataset.xSpeed;
+        const acceleration = 1;
+
+
+        console.log(mouseX + " " + mouseY);
+
+    };
+    var mousePos = { x: -1, y: -1 };
+    /*
+    window.addEventListener('mousemove', (event) => {
+        mousePos = { x: event.clientX, y: event.clientY };
+    });
+
+
+    window.onload = function () {
+        setInterval(updateHexagons, 1000)
+    }
+    */
+
+
+
+
 
 
 </script>

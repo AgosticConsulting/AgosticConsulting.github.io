@@ -5,17 +5,20 @@ html {
 h1 {
     font-family: truenoSB, serif;
 
-    /* make not bold */
-    font-weight: normal;
 }
 
 .navbar-nav a{
     font: 20px truenoSB;
 }
 
+/* flexbox CSS for Services and Clients */
+
 .flex1 {
     display: flex;
     -webkit-flex: 1;
+}
+.row-layout h1{
+    padding-left: 20px;
 }
 .flex1-child {
     flex: 3;
@@ -26,6 +29,9 @@ h1 {
     width:calc(33vh - 10px);
     flex: 1;
 }
+
+
+/* for colour changing borders */
 
 .gradient-border-bottom {
     --borderWidth: 3px;
@@ -45,19 +51,73 @@ h1 {
     background: linear-gradient(60deg, #7dd757, #61b658,#0c515b);
     border-radius: calc(2 * var(--borderWidth));
     z-index: -5;
-    animation: animatedgradient 5s ease alternate infinite;
+    animation: animatedgradient 2s ease alternate infinite;
     background-size: 300% 300%;
 }
 
 .services-flex{
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .services-flex-child{
-    margin: 0px 20px;
+    margin: auto;
+    flex:1;
     text-align: center;
+    /* make hidden */
+
 }
+.services-flex-child p{
+    /* we want the text to hug the bottom */
+    padding-bottom: 0;
+
+    margin-bottom: 10px;
+    visibility: hidden;
+
+}
+.client-logo{
+    width: 30%;
+}
+
+/* Contact CSS*/
+
+.contact {
+    width: 50%;
+    margin: auto;
+
+
+}
+.contact-button{
+    border: 20px solid #7ed957;
+    background-color: #7ed957;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: truenoSB;
+}
+
+.contact-button p{
+    font-size: 1em;
+    font-family: truenoSB;
+    margin: 0;
+}
+
+/* Hexagon CSS */
+.hex{
+    position: absolute;
+}
+.hex::before {
+    content: "\2B22";
+    font-size: 50px;
+}
+
+
+
+
 
 
 
@@ -101,12 +161,7 @@ h1 {
 
 
 
-
-
-
-
-
-
+/* photobanner css (not used) */
 
 
 .photobanner_container {

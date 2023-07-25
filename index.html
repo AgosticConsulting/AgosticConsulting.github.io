@@ -11,10 +11,11 @@
     <title>Agostic Consulting</title>
 </head>
 
-<div id="nav-placeholder"></div>
 
+<div id="nav-placeholder"></div>
 <div id="main" style="width:80%;margin:auto;">
-    <div class="flex1 gradient-border-bottom">
+
+    <div id="About" class="flex1 gradient-border-bottom">
         <div class="flex1-child">
             <h1>About Us</h1>
             <p>
@@ -27,17 +28,52 @@
         </div>
         <img class="flex1-child" src="./resources/images/logo/ag_logo_clear.svg" >
     </div>
-    <h1 style="font-family:truenoSB; ">Our Clients</h1>
-    <div class="services-flex">
+    <div id="Services">
+        <h1 style="font-family:truenoSB; ">Our Services</h1>
+        <div class="services-flex gradient-border-bottom">
+            <div class="services-flex-child">
+
+                <img src="http://placehold.it/150x250">
+                <p> Placeholder 1</p>
+            </div>
 
             <div class="services-flex-child">
-                Bob
+
                 <img src="http://placehold.it/150x250">
+                <p>Placeholder 2</p>
             </div>
-            <div class="services-flex-child">
-                Leading Point
-                <img src="http://placehold.it/150x250">
-            </div>
+        </div>
+    </div>
+    <div id="Clients">
+    <h1 style="font-family:truenoSB; ">Our Clients</h1>
+        <div class="services-flex">
+                <div class="services-flex-child">
+
+                    <img src="http://placehold.it/150x250">
+                    <p> Placeholder 1</p>
+                </div>
+                <div class="services-flex-child">
+
+                    <img src="http://placehold.it/150x250">
+                    <p> Placeholder 2</p>
+                </div>
+
+                <div class="services-flex-child">
+
+                    <img src="http://placehold.it/150x250">
+                    <p>Placeholder 2</p>
+                </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="Contact">
+
+
+
+
 
     </div>
 
@@ -45,7 +81,10 @@
 
 
 </div>
+<div class="scroll-to-top">
 
+
+</div>
 
 
 
@@ -77,18 +116,26 @@
 
 <!-- copyright agostic consulting -->
 <div class="copyright">
-    <p>Agostic Consulting © 2021</p>
+    <p>Agostic Consulting © 2023</p>
 </div>
 
 <script>
     $(function(){
-      $("#nav-placeholder").load("./navbar.html");
+      $("#nav-placeholder").load("./navbar.html", function(){
+          setNavPadding();
+      });
     });
-    // get height of navbar
-    const height = document.getElementById("nav-placeholder").style.height;
-    // set margin top of main
-    const main = document.getElementById("main");
-    main.style.paddingTop = 90 + "px";
+
+    //Dynamically set height to navbar: (not working due to async)
+    //   var height = document.getElementsByClassName("navbar")[0];
+
+   function setNavPadding(){
+       var height = getComputedStyle(document.getElementsByClassName("navbar")[0]).height;
+       var main = document.getElementById("main");
+       main.style.paddingTop = height;
+   }
+
+
 </script>
 <!--
 <script>

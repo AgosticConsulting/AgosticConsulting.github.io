@@ -1,17 +1,25 @@
-
+html {
+    scroll-behavior: smooth !important;
+    /* not supported by safari or IE */
+}
 h1 {
-    font-family: truenoSB;
+    font-family: truenoSB, serif;
+
     /* make not bold */
     font-weight: normal;
 }
 
-
+.navbar-nav a{
+    font: 20px truenoSB;
+}
 
 .flex1 {
     display: flex;
+    -webkit-flex: 1;
 }
 .flex1-child {
     flex: 3;
+
 }
 
 .flex1 img {
@@ -30,7 +38,7 @@ h1 {
 .gradient-border-bottom:after {
     content: '';
     position: absolute;
-    bottom: calc(calc(-1 * var(--borderWidth)) + 5px); /* Place the element at the bottom */
+    bottom: calc(calc(-1 * var(--borderWidth)) + 10px); /* Place the element at the bottom */
     left: calc(-1 * var(--borderWidth));
     height: var(--borderWidth); /* Set the height to the desired border width */
     width: calc(100% + var(--borderWidth) * 2);
@@ -43,13 +51,15 @@ h1 {
 
 .services-flex{
     display: flex;
-
     justify-content: center;
 }
 
 .services-flex-child{
-
+    margin: 0px 20px;
+    text-align: center;
 }
+
+
 
 
 

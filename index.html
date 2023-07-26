@@ -17,33 +17,71 @@
 
     <div id="About" class="flex1 gradient-border-bottom">
         <div class="flex1-child">
-            <h1>About Us</h1>
+            <h1 >About Us</h1>
             <p>
-              We are currently leading a innovative project to implement a state-of-the-art wealth management system for Advisors on the AWS cloud platform. This ambitious undertaking involves migrating the existing system to the new platform seamlessly. We are leveraging AWS for enhanced scalability, superior customer experience, and the integration of cutting-edge ML/AI technologies. My strategic approach and expertise in cloud architecture are instrumental in ensuring the successful realization of these transformative initiatives, revolutionizing the way wealth management services are delivered and experienced.            </p>
-            <h1> Skills and Platforms</h1>
+                With over 20 years' CTO experience in global financial institutions we provide innovative architect solutions to drive major transition from complex legacy infrastructure to strategic, event-driven architecture in your organisation.  Our industry knowledge, strategic approach and expertise in cloud architecture are instrumental in ensuring successful transformation and revolutionising the way wealth management services are delivered and experienced
+            </p>
+            <h1 id="Services">Services</h1>
+<!--
+Enterprise data modelling
+Complete redesign of data processing: API-driven data abstraction
+Functional data architecture across the Firm
+Defined data governance
+Seamless migration from existing to new platform
+Transactional integrity and multi-site disaster recovery
+Complex internal and external reporting models
+Solution architects
+Data CIO
 
-                <!-- AWS Lambda
-· Snowflake ·
-PostgreSQL ·
-Amazon Web Services (AWS) ·
-Machine Learning ·
-Wealth Management Services ·
-Solution Architecture ·
-Google Cloud Platform (GCP)
--->         <ul>
-            <li> AWS Lambda </li>
-            <li> Snowflake </li>
-            <li> PostgreSQL </li>
-            <li> Amazon Web Services (AWS) </li>
-            <li> Machine Learning </li>
-            <li> Wealth Management Services </li>
-            <li> Solution Architecture </li>
-            <li> Google Cloud Platform (GCP) </li>
+-->        <ul>
+                <li> Enterprise data modelling </li>
+                <li> Complete redesign of data processing: API-driven data abstraction </li>
+                <li> Functional data architecture across the Firm </li>
+                <li> Defined data governance </li>
+                <li> Seamless migration from existing to new platform </li>
+                <li> Transactional integrity and multi-site disaster recovery </li>
+                <li> Complex internal and external reporting models </li>
+                <li> Solution architects </li>
+                <li> Data CIO </li>
             </ul>
+
+
+
+
+
+
+
 
         </div>
         <img class="flex1-child" src="./resources/images/logo/ag_logo_clear.svg" >
     </div>
+    <div id="Platforms" class="row-layout gradient-border-bottom">
+        <h1 style="font-family:truenoSB;">Platforms</h1>
+        <!--
+            Analytics AI/Machine learning
+            Amazon Web Services (AWS) Cloud
+            AWS Lambda
+            Snowflake
+            PostgreSQL
+            Google Cloud Platform (GCP)
+            ??Azure
+        -->
+        <ul>
+            <li> Analytics AI/Machine learning </li>
+            <li> Amazon Web Services (AWS) Cloud </li>
+            <li> AWS Lambda </li>
+            <li> Snowflake </li>
+            <li> PostgreSQL </li>
+            <li> Google Cloud Platform (GCP) </li>
+            <li> ??Azure </li>
+        </ul>
+
+
+
+
+
+    </div>
+    <!--
     <div id="Services" class="row-layout">
         <h1 style="font-family:truenoSB; ">Our Services</h1>
         <div class="services-flex gradient-border-bottom">
@@ -82,7 +120,7 @@ Google Cloud Platform (GCP)
 
         </div>
     </div>
-
+-->
 
 
     <div id="Contact" class="contact">
@@ -92,6 +130,12 @@ Google Cloud Platform (GCP)
     </div>
 
 
+
+
+
+    <div class="copyright">
+        <p>Agostic Consulting © 2023</p>
+    </div>
 
 
 </div>
@@ -120,16 +164,7 @@ Google Cloud Platform (GCP)
 </div>
 -->
 <!-- copyright Agostic consulting -->
-<div class="copyright">
-    <p>Agostic Consulting © 2023</p>
-</div>
 
-
-
-
-<div id="hexagons">
-    <span class="hex"></span>
-</div>
 
 <script>
     $(function(){
@@ -186,46 +221,7 @@ Google Cloud Platform (GCP)
 
 
 
-    function updateHexagons() {
-        const hexagons = document.getElementsByClassName("hex");
-        const hexArray = Array.from(hexagons);
-        // get mouse X, Y
-        var mouseX = mousePos.x;
-        var mouseY = mousePos.y;
 
-        hexArray.forEach(function (value) {
-            updateHexagon(value, mouseX, mouseY);
-
-        });
-    };
-
-    function updateHexagon(currentValue, mouseX, mouseY){
-        var hexagon = currentValue;
-        console.log(hexagon);
-        if (hexagon.getAttribute("data-xSpeed") === 'undefined') {
-            hexagon.dataset.xSpeed = 0;
-        }
-        if (hexagon.getAttribute("data-ySpeed") === 'undefined') {
-            hexagon.dataset.ySpeed = 0;
-        }
-        //var xSpeed = hexagon.dataset.xSpeed;
-        const acceleration = 1;
-
-
-        console.log(mouseX + " " + mouseY);
-
-    };
-    var mousePos = { x: -1, y: -1 };
-    /*
-    window.addEventListener('mousemove', (event) => {
-        mousePos = { x: event.clientX, y: event.clientY };
-    });
-
-
-    window.onload = function () {
-        setInterval(updateHexagons, 1000)
-    }
-    */
 
 
 
@@ -235,12 +231,12 @@ Google Cloud Platform (GCP)
 </script>
 <!--
 <script>
-    // get contents of content/testfile.txt
+    // get contents of content/
     function getContents() {
 
         var contents = [];
         return new Promise((resolve, reject) =>{
-            $.get("./content/testfile.txt", function(data) {
+            $.get("./content/elements.txt", function(data) {
                 // seperate the data into each line
                 var lines = data.split("\n");
 
@@ -273,13 +269,6 @@ Google Cloud Platform (GCP)
         // add body tag to class
         document.getElementById("main").appendChild(newContent);
     }
-
-
-
-
-
-
-
 
 </script>
 -->

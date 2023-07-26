@@ -17,9 +17,7 @@ h1 {
     display: flex;
     -webkit-flex: 1;
 }
-.row-layout h1{
-    padding-left: 20px;
-}
+
 .flex1-child {
     flex: 3;
 
